@@ -114,3 +114,13 @@ section {
     margin-bottom: 12px;
     /* spacing after the rectangle */
 }
+
+nav a {
+    color: var(--accent1-color);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+    /* Now used! */
+}
