@@ -95,24 +95,26 @@ article {
 
 .socialmedia img {
     width: 30px;
-    height: auto
+    height: auto;
 }
 
 /* Colored rectangle effect for h2 and section */
-h2,
+h2 {
+    font-family: var(--heading-font);
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
 section {
     background-color: var(--primary-color);
-    /* rectangle color */
     color: #ffffff;
-    /* text color inside rectangle */
     padding: 4px 8px;
-    /* space between text and rectangle edge */
     border-radius: 4px;
-    /* optional: rounded corners */
-    display: inline-block;
-    /* keeps the rectangle tight around content */
     margin-bottom: 12px;
-    /* spacing after the rectangle */
 }
 
 nav a {
@@ -122,5 +124,4 @@ nav a {
 
 nav a:hover {
     color: var(--secondary-color);
-    /* Now used! */
 }
