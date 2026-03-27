@@ -1,29 +1,35 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-main {
-    max-width: 840px;
-}
-
+/* Navigation */
 nav {
-    background-color: #333;
-    padding: 10px 20px;
-    color: white;
+    background-color: steelblue;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 nav a {
-    color: white;
-    padding: 10px;
     display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
 }
 
+/* Headings */
 h1 {
     color: steelblue;
+    border-bottom: #000;
 }
 
+/* Images in main content */
 main img {
     width: 150px;
     height: auto;
@@ -31,53 +37,79 @@ main img {
     padding: 2px;
     box-shadow: 0 0 30px gray;
     float: right;
-    margin: o o 1rem 1rem;
+    margin: 0 0 1rem 1rem;
 }
 
+/* Paragraphs */
 p {
     margin: 1rem 0;
-}
-
-p {
     padding: 0;
 }
 
+/* Aside */
 aside {
-    width: 20em;
-    margin: 1em;
+    padding: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 1em;
     background-color: aliceblue;
     color: black;
     text-align: center;
 }
 
+/* Images inside aside */
 aside img {
     width: 200px;
     height: auto;
 }
 
+/* Aside headings */
 aside h2 {
-    position: absolute;
-    right: 940px;
-    left: 30px;
+    margin-bottom: 1rem;
 }
 
+/* Footer */
 footer {
     margin-top: 15px;
     border-top: 1px solid black;
     text-align: center;
 }
 
-/* Class Selectors */
+/* Boxes */
 .box {
     margin: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 1rem;
     background-color: #eee;
-    color: #000
+    color: #000;
 }
 
 .indent {
     padding-left: 2rem;
+}
+
+/* Center header, grid, and footer */
+header,
+.grid,
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* GRID LAYOUT */
+.grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    /* aside = 250px, main = flexible */
+    gap: 20px;
+}
+
+/* Place aside and main in the correct columns */
+aside {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+main {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 1rem;
 }
