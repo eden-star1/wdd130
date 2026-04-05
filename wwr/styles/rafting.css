@@ -29,6 +29,7 @@ footer {
     max-width: 840px;
     width: 90%;
     margin: 0 auto;
+
 }
 
 /* HEADER */
@@ -56,10 +57,6 @@ footer {
     text-decoration: none;
     color: rgb(3, 3, 3);
     transition: 0.3s;
-}
-
-footer {
-    color: #f4f4f4;
 }
 
 .grid-header nav a:hover {
@@ -148,13 +145,13 @@ h2 {
     margin-top: 5px;
 }
 
-/* FOOTER */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--accent1-color);
     padding: 20px;
+    color: white;
 }
 
 .socialmedia {
