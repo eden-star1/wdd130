@@ -7,20 +7,30 @@
     --body-font: Verdana, sans-serif;
 }
 
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* GLOBAL */
 body {
     font-family: var(--body-font);
+    line-height: 1.6;
+    background-color: #ffffff;
 }
 
-h1,
+h1 {
+    color: azure;
+    font-size: 14px;
+}
+
 h2,
 h3 {
     font-family: var(--heading-font);
+    letter-spacing: 0.5px;
+
 }
 
 header,
@@ -29,39 +39,48 @@ footer {
     max-width: 840px;
     width: 90%;
     margin: 0 auto;
-
 }
 
-/* HEADER */
 .grid-header {
-    display: grid;
-    grid-template-columns: 150px 1fr;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: var(--accent1-color);
-    padding: 20px;
+    padding: 15px 20px;
+    flex-wrap: nowrap;
 }
 
-.logo {
+/* LOGO + TITLE GROUP */
+.grid-header .logo {
     width: 120px;
+    height: auto;
 }
 
+/* NAV */
 .grid-header nav {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
 }
 
+/* LINKS */
 .grid-header nav a {
-    padding: 10px 20px;
-    border: 1px solid var(--accent1-color);
+    display: inline-block;
+    padding: 6px 10px;
     background-color: var(--accent2-color);
     text-decoration: none;
-    color: rgb(3, 3, 3);
-    transition: 0.3s;
+    color: black;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
 }
 
+/* HOVER */
 .grid-header nav a:hover {
     background-color: white;
-    color: white;
+    color: var(--accent1-color);
 }
 
 /* HERO */
@@ -75,12 +94,13 @@ footer {
 
 .hero h1 {
     position: absolute;
-    top: 20px;
-    width: 100%;
-    text-align: center;
-    background: rgba(0, 0, 2, 4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
     color: white;
-    padding: 10px;
+    padding: 15px 25px;
+    border-radius: 8px;
 }
 
 .hero article {
@@ -90,6 +110,7 @@ footer {
     right: 20px;
     background: var(--accent2-color);
     padding: 15px;
+    border-radius: 8px;
 }
 
 .hero article img {
@@ -104,10 +125,30 @@ section {
     padding: 20px;
     margin: 20px 0;
     border: 1px solid var(--accent1-color);
+    border-radius: 8px;
 }
 
 h2 {
     margin-bottom: 10px;
+}
+
+/* HOME GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.grid div {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 5px;
 }
 
 /* HISTORY */
@@ -145,27 +186,83 @@ h2 {
     margin-top: 5px;
 }
 
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--accent1-color);
-    padding: 20px;
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--primary-color);
     color: white;
 }
 
-.socialmedia {
+.cta a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: white;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.cta a:hover {
+    background: var(--accent2-color);
+}
+
+/* NEWSLETTER */
+.newsletter {
+    text-align: center;
+}
+
+.newsletter form {
+    max-width: 400px;
+    margin: 15px auto;
     display: flex;
+    flex-direction: column;
     gap: 10px;
 }
 
-.socialmedia img {
-    width: 30px;
+/* TRIPS */
+.trips {
+    display: flex;
+    gap: 20px;
 }
 
-/* CONTACT HEADER INFO */
+.trips div {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trips img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* CONTACT PAGE */
 main h1,
-h2 {
+main h2 {
     text-align: center;
     margin: 20px 0 10px;
 }
@@ -174,7 +271,6 @@ main > p {
     text-align: center;
 }
 
-/* Wrap map and form in a container with this class */
 .map-form {
     display: flex;
     gap: 30px;
@@ -184,7 +280,6 @@ main > p {
     margin: 0 auto 40px;
 }
 
-/* Give map a fixed width and height */
 .map {
     flex: 0 0 48%;
     max-width: 480px;
@@ -192,14 +287,12 @@ main > p {
     height: 320px;
 }
 
-/* Make iframe fill the map container */
 .map iframe {
     width: 100%;
     height: 100%;
     border: none;
 }
 
-/* Form container takes remaining space */
 form {
     flex: 1 1 48%;
     max-width: 480px;
@@ -208,17 +301,15 @@ form {
     gap: 15px;
 }
 
-/* Inputs and textarea full width */
 input[type="text"],
 input[type="email"],
 textarea {
     width: 100%;
     padding: 8px;
     font-size: 1rem;
-    box-sizing: border-box;
 }
 
-/* Align radio and checkbox nicely */
+/* RADIO + CHECKBOX */
 fieldset:nth-of-type(2),
 fieldset:last-of-type {
     display: flex;
@@ -231,20 +322,13 @@ fieldset:last-of-type {
     align-items: center;
 }
 
-fieldset:last-of-type label {
-    margin-left: 5px;
-    font-weight: normal;
-}
-
-/* Make radio and checkbox inputs smaller and aligned */
 input[type="radio"],
 input[type="checkbox"] {
     width: auto;
     margin-right: 8px;
-    vertical-align: middle;
 }
 
-/* Style submit button */
+/* BUTTON */
 button {
     padding: 12px;
     font-size: 1.1rem;
@@ -258,7 +342,7 @@ button:hover {
     background-color: var(--accent1-color);
 }
 
-/* EMPLOYEE SECTION */
+/* EMPLOYEES */
 .employees {
     text-align: center;
 }
@@ -270,11 +354,26 @@ button:hover {
     margin-top: 10px;
 }
 
-.employee-gallery figure {
-    flex: 1;
-}
-
 .employee-gallery img {
     width: 100%;
     max-width: 120px;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--accent1-color);
+    padding: 15px 20px;
+    color: white;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 10px;
+}
+
+.socialmedia img {
+    width: 30px;
 }
